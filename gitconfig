@@ -1,0 +1,21 @@
+[user]
+	name = Jan Fredrik Wedén
+	email = jfweden@gmail.com
+
+[github]
+	user = janwe
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+[credential]
+	helper = osxkeychain
+
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	df = diff
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	log = log --graph --decorate=full --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	st = status
