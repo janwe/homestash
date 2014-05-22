@@ -20,6 +20,10 @@
 *.tar
 *.zip
 
+# Merge backups #
+#################
+*.orig
+
 # Logs and databases #
 ######################
 *.log

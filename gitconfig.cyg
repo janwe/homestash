@@ -7,12 +7,20 @@
 
 [core]
 	excludesfile = ~/homestash/gitignore_global
-
-[credential]
-	helper = osxkeychain
+	autocrlf = input
 
 [push]
-	default = simple
+	default = current
+
+[color]
+	status = auto
+
+[merge]
+    renamelimit = 3250
+
+[mergetool "kdiff3"]
+    path = C:/Program Files (x86)/KDiff3/kdiff3.exe
+	keepBackup = false
 
 [alias]
 	br = branch
