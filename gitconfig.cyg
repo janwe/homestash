@@ -1,33 +1,38 @@
 [user]
-	name = Jan Fredrik Wedén
-	email = jfweden@gmail.com
+    name = Jan Fredrik Wedén
+    email = jfweden@gmail.com
 
 [github]
-	user = janwe
+    user = janwe
 
 [core]
-	excludesfile = ~/homestash/gitignore_global
-	autocrlf = input
-
-[push]
-	default = current
+    excludesfile = ~/homestash/gitignore_global
+#    autocrlf = input
+    autocrlf = true
+    quotepath = false
+    precomposeunicode = true
 
 [color]
-	status = auto
+    branch = auto
+    diff = auto
+    status = auto
 
 [merge]
     renamelimit = 3250
 
+[difftool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
 [mergetool "kdiff3"]
-    path = C:/Program Files (x86)/KDiff3/kdiff3.exe
-	keepBackup = false
+    path = C:/Program Files/KDiff3/kdiff3.exe
+    keepBackup = false
+    trustExitCode = false
 
 [alias]
-	br = branch
-	ci = commit
-	co = checkout
-	df = diff
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	log = log --graph --decorate=full --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	st = status
-	cl = config -l
+    br = branch
+    ci = commit
+    co = checkout
+    df = diff
+    st = status
+    cl = config -l
+#    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+#    log = log --graph --decorate=full --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
