@@ -33,10 +33,10 @@
 # OS generated files #
 ######################
 
-.DS_Store?
+.DS_Store*
 .AppleDouble
 ehthumbs.db
-Icon?
+Icon*
 .LSOverride
 Thumbs.db
 ._*

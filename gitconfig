@@ -3,23 +3,30 @@
 	email = jfweden@gmail.com
 
 [github]
-	user = janwe
+    user = janwe
 
 [core]
-	excludesfile = ~/homestash/gitignore_global
+#	excludesfile = /Users/janwe/.gitignore_global
+    excludesfile = ~/homestash/gitignore_global
+    autocrlf = input
+    # norwegian chars in commits
+    quotepath = false
+    precomposeunicode = true #
 
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 
-[push]
-	default = simple
+[color]
+    branch = auto
+    diff = auto
+    status = auto
 
 [alias]
-	br = branch
-	ci = commit
-	co = checkout
-	df = diff
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	log = log --graph --decorate=full --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	st = status
-	cl = config -l
+    br = branch
+    ci = commit
+    co = checkout
+    df = diff
+    st = status
+    cl = config -l
+#   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+#    log = log --graph --decorate=full --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
