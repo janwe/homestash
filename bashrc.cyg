@@ -1,28 +1,3 @@
-alias d="ls -laF"
-alias np="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
-
-alias findes="netstat -ano | grep 9200"
-alias killes="taskkill /F /PID "
-
-export PATH=~/bin:$PATH
-
-export THISENV=`uname`
-if [[ "$THISENV" == *"CYGWIN"* ]]; then
-	export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u@\h: \[\e[33m\]\w \[\e[36m\]$(vcprompt)\[\e[0m\]]\n\$ '
-#	alias git="/cygdrive/c/Program\ Files\ \(x86\)/Git/bin/git.exe"
-#	alias git-gui='"/cygdrive/c/Program\ Files\ \(x86\)/Git/bin/wish.exe" "C:\Program Files (x86)\Git\libexec\git-core\git-gui" --'
-#	alias gitk='"/cygdrive/c/Program\ Files\ \(x86\)/Git/bin/wish.exe" "C:\Program Files (x86)\Git\bin\gitk" --'
-#	alias gitw='/cygdrive/c/Windows/SysWOW64/cmd.exe /c "C:\Program Files (x86)\Git\bin\git.exe"'
-#	alias gitw-gui='/cygdrive/c/Windows/SysWOW64/cmd.exe /c "C:\Program Files (x86)\Git\bin\wish.exe" "C:\Program Files (x86)\Git\libexec\git-core\git-gui" --'
-#	alias gitkw='/cygdrive/c/Windows/SysWOW64/cmd.exe /c "C:\Program Files (x86)\Git\bin\wish.exe" "C:\Program Files (x86)\Git\bin\gitk" --'
-#	source "/cygdrive/c/Program Files (x86)/Git/etc/git-completion.bash"
-fi
-
-# source project specific rc if it exists
-if [ -f "${HOME}/.projectrc" ] ; then
-  source "${HOME}/.projectrc"
-fi
-
 # To the extent possible under law, the author(s) have dedicated all 
 # copyright and related and neighboring rights to this software to the 
 # public domain worldwide. This software is distributed without any warranty. 
@@ -48,8 +23,39 @@ fi
 
 # User dependent .bashrc file
 
+export LANG=$(locale -uU)
+
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
+
+alias d="ls -laFG"
+alias ls="ls -FG"
+alias npp="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
+
+alias findes="netstat -ano | grep 9200"
+alias killes="taskkill /F /PID "
+
+alias sshagent="eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa"
+
+export PATH=~/bin:~/homestash/bin:$PATH
+
+source /etc/bash_completion
+source /etc/bash_completion.d/git
+source ~/bin/git-prompt.sh
+
+# DEFAULT CYG export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$'
+# OLD CYG export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u@\h: \[\e[33m\]\w \[\e[36m\]$(vcprompt)\[\e[0m\]]\n\$ '
+export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u\[\e[0m\]@\[\e[32m\]\h: \[\e[33m\]\w\[\e[36m\]`__git_ps1`\[\e[0m\] ]\n$ '
+
+# source project specific rc if it exists
+if [ -f "${HOME}/.projectrc" ] ; then
+  source "${HOME}/.projectrc"
+fi
+
+# source project specific rc if it exists
+if [ -f "${HOME}/.personalrc" ] ; then
+  source "${HOME}/.personalrc"
+fi
 
 # Shell Options
 #
