@@ -16,6 +16,9 @@
 [credential]
     helper = osxkeychain
 
+[push]
+    default = simple
+    
 [color]
     branch = auto
     diff = auto

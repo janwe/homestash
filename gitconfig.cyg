@@ -12,6 +12,9 @@
     quotepath = false
     precomposeunicode = true
 
+[push]
+    default = simple
+    
 [color]
     branch = auto
     diff = auto
