@@ -35,7 +35,8 @@ alias npp="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
 alias findes="netstat -ano | grep 9200"
 alias killes="taskkill /F /PID "
 
-alias sshagent="eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa"
+alias sshagent="eval `ssh-agent -s`"
+alias addkey="ssh-add ~/.ssh/id_rsa"
 
 export PATH=~/bin:~/homestash/bin:$PATH
 
@@ -55,6 +56,14 @@ fi
 # source project specific rc if it exists
 if [ -f "${HOME}/.personalrc" ] ; then
   source "${HOME}/.personalrc"
+fi
+
+SSHAGENT=/usr/bin/ssh-agent
+SSHAGENTARGS="-s"
+if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+    echo "Starting ssh-agent for current shell"
+    eval `$SSHAGENT $SSHAGENTARGS`
+    trap "kill $SSH_AGENT_PID" 0
 fi
 
 # Shell Options
