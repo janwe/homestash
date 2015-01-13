@@ -12,16 +12,23 @@
     quotepath = false
     precomposeunicode = true
 
+[credential]
+    helper = cache --timeout=86400
+
 [push]
     default = simple
-    
+
 [color]
     branch = auto
     diff = auto
     status = auto
 
+[diff]
+    guitool = kdiff3
+
 [merge]
     renamelimit = 3250
+    tool = kdiff3
 
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
