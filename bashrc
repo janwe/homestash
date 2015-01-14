@@ -4,8 +4,8 @@ export PATH=~/bin:~/homestash/bin:/usr/local/bin:$PATH
 #export EDITOR='subl -w'
 
 export JAVA_HOME=`/usr/libexec/java_home`
-alias usejava7="EXPORT JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
-alias usejava8="EXPORT JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
+alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
+alias usejava8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
 
 #export MAVEN_OPTS="-XX:MaxPermSize=256m -Xmx512m"
 export MAVEN_OPTS="-Xmx512m"
