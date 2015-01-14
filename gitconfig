@@ -6,12 +6,11 @@
     user = janwe
 
 [core]
-#	excludesfile = /Users/janwe/.gitignore_global
     excludesfile = ~/homestash/gitignore_global
     autocrlf = input
     # norwegian chars in commits
     quotepath = false
-    precomposeunicode = true #
+    precomposeunicode = true
 
 [credential]
     helper = osxkeychain
@@ -23,6 +22,20 @@
     branch = auto
     diff = auto
     status = auto
+
+[diff]
+    guitool = kdiff3
+
+[merge]
+    renamelimit = 3250
+    tool = kdiff3
+
+[difftool "kdiff3"]
+    trustExitCode = false
+
+[mergetool "kdiff3"]
+    keepBackup = false
+    trustExitCode = false
 
 [alias]
     br = branch
