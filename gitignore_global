@@ -20,6 +20,22 @@
 *.tar
 *.zip
 
+# IDEs #
+########
+# IntelliJ
+*.iml
+.idea
+/out
+
+# Eclipse
+.classpath
+.project
+.settings
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
 # Merge backups #
 #################
 *.orig

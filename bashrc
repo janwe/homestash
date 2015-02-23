@@ -15,6 +15,7 @@ export MAVEN_OPTS="-Xmx512m"
 alias d="ls -laFG"
 alias ls="ls -FG"
 ##alias git="/usr/local/git/bin/git"
+alias bd="boot2docker"
 
 
 #### Added by the Heroku Toolbelt
@@ -57,7 +58,7 @@ source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 # OLD MAC export PS1='[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 3)\]\h\[$(tput sgr0)\]: \[$(tput setaf 4 sgr0)\]\w\[$(tput setaf 6)\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[$(tput sgr0)\]]\n\$ '
 # OLD CYG export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u@\h: \[\e[33m\]\w \[\e[36m\]$(vcprompt)\[\e[0m\]]\n\$ '
 # TORGEIR export PS1='\n\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 3)\][`jobs -s | wc -l | sed -e "s/ //g"`] \[$(tput setaf 4 sgr0)\]\w\[$(tput setaf 5)\]`__git_prompt` \n\[$(tput sgr0)\]$ '
-export PS1='\n[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 3)\][`jobs -s | wc -l | sed -e "s/ //g"`] \[$(tput setaf 5 sgr0)\]\w\[$(tput setaf 6)\]`__git_ps1`\[$(tput sgr0)\] ]\n$ '
+export PS1='\n[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 3)\][`jobs -r | wc -l | sed -e "s/ //g"`] \[$(tput setaf 5 sgr0)\]\w\[$(tput setaf 6)\]`__git_ps1`\[$(tput sgr0)\] ]\n$ '
 
 # source project specific rc if it exists
 if [ -f "${HOME}/.projectrc" ] ; then
