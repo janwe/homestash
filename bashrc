@@ -62,9 +62,25 @@ export PS1='\n[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(t
 
 # source project specific rc if it exists
 if [ -f "${HOME}/.projectrc" ] ; then
+  echo "Sourcing ${HOME}/.projectrc"
   source "${HOME}/.projectrc"
 fi
 # source user specific rc if it exists
 if [ -f "${HOME}/.personalrc" ] ; then
+  echo "Sourcing ${HOME}/.personalrc"
   source "${HOME}/.personalrc"
+fi
+# source all config in project dir
+if [ -d "${HOME}/.project.d" ] ; then
+  for projectfile in ${HOME}/.project.d/*; do
+    echo "Sourcing $projectfile"
+    source $projectfile
+  done
+fi
+# source all config in user dir
+if [ -d "${HOME}/.personal.d" ] ; then
+  for personalfile in ${HOME}/.personal.d/*; do
+    echo "Sourcing $personalfile"
+    source $personalfile
+  done
 fi
