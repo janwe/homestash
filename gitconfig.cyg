@@ -7,13 +7,14 @@
 
 [core]
     excludesfile = ~/homestash/gitignore_global
-#    autocrlf = input
-    autocrlf = true
+    autocrlf = input
+#    autocrlf = true
     quotepath = false
     precomposeunicode = true
 
 [credential]
-    helper = cache --timeout=86400
+#    helper = cache --timeout=86400
+	helper = !\"C:\\Program Files (x86)\\GitExtensions\\GitCredentialWinStore\\git-credential-winstore.exe\"
 
 [push]
     default = simple
