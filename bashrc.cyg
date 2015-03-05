@@ -28,8 +28,8 @@ export LANG=$(locale -uU)
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
-alias d="ls -laFG"
-alias ls="ls -FG"
+alias d="ls -laFG --color=auto"
+alias ls="ls -FG --color=auto"
 alias npp="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
 
 alias findes="netstat -ano | grep 9200"
@@ -56,6 +56,11 @@ fi
 # source project specific rc if it exists
 if [ -f "${HOME}/.personalrc" ] ; then
   source "${HOME}/.personalrc"
+fi
+
+# source local computer specific rc if it exists
+if [ -f "${HOME}/.localrc" ] ; then
+  source "${HOME}/.localrc"
 fi
 
 SSHAGENT=/usr/bin/ssh-agent
