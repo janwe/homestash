@@ -1,22 +1,60 @@
+##export PS1="[\u@\h:\w]\$ "
+# OLD MAC export PS1='[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 3)\]\h\[$(tput sgr0)\]: \[$(tput setaf 4 sgr0)\]\w\[$(tput setaf 6)\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[$(tput sgr0)\]]\n\$ '
+# OLD CYG export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u@\h: \[\e[33m\]\w \[\e[36m\]$(vcprompt)\[\e[0m\]]\n\$ '
+# TORGEIR export PS1='\n\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 3)\][`jobs -s | wc -l | sed -e "s/ //g"`] \[$(tput setaf 4 sgr0)\]\w\[$(tput setaf 5)\]`__git_prompt` \n\[$(tput sgr0)\]$ '
+export PS1='\n[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 3)\][`jobs -r | wc -l | sed -e "s/ //g"`] \[$(tput setaf 5 sgr0)\]\w\[$(tput setaf 6)\]`__git_ps1`\[$(tput sgr0)\] ]\n$ '
 
-export PATH=~/bin:~/homestash/bin:/usr/local/bin:$PATH
-
-#export EDITOR='subl -w'
-
-export JAVA_HOME=`/usr/libexec/java_home`
-alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
-alias usejava8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
-
-#export MAVEN_OPTS="-XX:MaxPermSize=256m -Xmx512m"
 export MAVEN_OPTS="-Xmx512m"
-
-##export SVN_EDITOR=mate
+export PATH=~/bin:~/homestash/bin:/usr/local/bin:$PATH
 
 alias d="ls -laFG --color=auto"
 alias ls="ls -FG --color=auto"
-##alias git="/usr/local/git/bin/git"
+
 alias bd="boot2docker"
 
+alias sshagent="eval `ssh-agent -s`"
+alias addkey="ssh-add ~/.ssh/id_rsa"
+
+alias whence='type -a'
+alias grep='grep --color'
+
+if [[ "`uname`" == "CYGWIN"* ]]; then
+  export LANG=$(locale -uU)
+
+  # If not running interactively, don't do anything
+  [[ "$-" != *i* ]] && return
+
+  # DEFAULT CYG export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$'
+  # OLD CYG export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u@\h: \[\e[33m\]\w \[\e[36m\]$(vcprompt)\[\e[0m\]]\n\$ '
+  export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u\[\e[0m\]@\[\e[32m\]\h: \[\e[33m\]\w\[\e[36m\]`__git_ps1`\[\e[0m\] ]\n$ '
+
+  alias npp="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
+  alias findes="netstat -ano | grep 9200"
+  alias killes="taskkill /F /PID "
+
+  [[ -f /etc/bash_completion ]] && . /etc/bash_completion
+  source /etc/bash_completion.d/git
+  source ~/bin/git-prompt.sh
+
+  SSHAGENT=/usr/bin/ssh-agent
+  SSHAGENTARGS="-s"
+  if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+    echo "Starting ssh-agent for current shell"
+    eval `$SSHAGENT $SSHAGENTARGS`
+    trap "kill $SSH_AGENT_PID" 0
+  fi
+else
+  export JAVA_HOME=`/usr/libexec/java_home`
+  alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
+  alias usejava8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
+
+  #### Git autocomplete
+  source /usr/local/etc/bash_completion.d/git-completion.bash
+  source /usr/local/etc/bash_completion.d/git-extras
+  source /usr/local/etc/bash_completion.d/git-prompt.sh
+
+  source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+fi
 
 #### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"
@@ -44,21 +82,6 @@ alias bd="boot2docker"
 #}
 
 #complete -F _completemarks jump unmark
-
-
-#### Git autocomplete
-source /usr/local/etc/bash_completion.d/git-completion.bash
-source /usr/local/etc/bash_completion.d/git-extras
-source /usr/local/etc/bash_completion.d/git-prompt.sh
-
-source `brew --repository`/Library/Contributions/brew_bash_completion.sh
-
-
-##export PS1="[\u@\h:\w]\$ "
-# OLD MAC export PS1='[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 3)\]\h\[$(tput sgr0)\]: \[$(tput setaf 4 sgr0)\]\w\[$(tput setaf 6)\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[$(tput sgr0)\]]\n\$ '
-# OLD CYG export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u@\h: \[\e[33m\]\w \[\e[36m\]$(vcprompt)\[\e[0m\]]\n\$ '
-# TORGEIR export PS1='\n\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 3)\][`jobs -s | wc -l | sed -e "s/ //g"`] \[$(tput setaf 4 sgr0)\]\w\[$(tput setaf 5)\]`__git_prompt` \n\[$(tput sgr0)\]$ '
-export PS1='\n[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 3)\][`jobs -r | wc -l | sed -e "s/ //g"`] \[$(tput setaf 5 sgr0)\]\w\[$(tput setaf 6)\]`__git_ps1`\[$(tput sgr0)\] ]\n$ '
 
 # source all config in project dir
 if [ -d "${HOME}/.project.d" ] ; then
