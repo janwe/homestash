@@ -10,6 +10,8 @@ export PATH=~/bin:~/homestash/bin:/usr/local/bin:$PATH
 alias d="ls -laFG --color=auto"
 alias ls="ls -FG --color=auto"
 
+alias cls="clear"
+
 alias bd="boot2docker"
 
 alias whence='type -a'
