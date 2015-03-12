@@ -12,11 +12,26 @@ alias ls="ls -FG --color=auto"
 
 alias bd="boot2docker"
 
-alias sshagent="eval `ssh-agent -s`"
-alias addkey="ssh-add ~/.ssh/id_rsa"
-
 alias whence='type -a'
 alias grep='grep --color'
+
+function sshagent {
+  SSHAGENT="/usr/bin/ssh-agent"
+  SSHAGENTARGS="-s"
+  if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+    echo "Starting ssh-agent for current shell"
+    eval `$SSHAGENT $SSHAGENTARGS`
+    trap "kill $SSH_AGENT_PID" 0
+  fi
+}
+function addkey {
+  sshagent
+  if [ -z ${1+x} ]; then
+    ssh-add ~/.ssh/id_rsa
+  else
+    ssh-add $1
+  fi
+}
 
 if [[ "`uname`" == "CYGWIN"* ]]; then
   export LANG=$(locale -uU)
@@ -48,13 +63,7 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
     fi
   }
 
-  SSHAGENT=/usr/bin/ssh-agent
-  SSHAGENTARGS="-s"
-  if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
-    echo "Starting ssh-agent for current shell"
-    eval `$SSHAGENT $SSHAGENTARGS`
-    trap "kill $SSH_AGENT_PID" 0
-  fi
+  sshagent
 else
   export JAVA_HOME=`/usr/libexec/java_home`
   alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
@@ -67,7 +76,7 @@ else
   source /usr/local/etc/bash_completion.d/git-extras
   source /usr/local/etc/bash_completion.d/git-prompt.sh
 
-  source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+  source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
 fi
 
 export MARKPATH=$HOME/.marks
