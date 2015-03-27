@@ -39,6 +39,8 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
   export LANG=$(locale -uU)
   export FIND_CMD="find"
 
+  export VISUAL=vim
+  
   # If not running interactively, don't do anything
   [[ "$-" != *i* ]] && return
 
@@ -49,6 +51,8 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
   alias npp="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
   #alias findes="netstat -ano | grep 9200"
   #alias killes="taskkill /F /PID "
+
+  alias vi=vim
 
   [[ -f /etc/bash_completion ]] && . /etc/bash_completion
   source /etc/bash_completion.d/git
