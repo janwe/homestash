@@ -7,15 +7,14 @@ export PS1='\n[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(t
 export MAVEN_OPTS="-Xmx512m"
 export PATH=~/bin:~/homestash/bin:/usr/local/bin:$PATH
 
-alias d="ls -laFG --color=auto"
-alias ls="ls -FG --color=auto"
-
 alias cls="clear"
 
 alias bd="boot2docker"
 
 alias whence='type -a'
 alias grep='grep --color'
+
+alias usemvnbare="rm -fv ~/.m2/settings.xml"
 
 function sshagent {
   SSHAGENT="/usr/bin/ssh-agent"
@@ -46,6 +45,9 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
   # OLD CYG export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u@\h: \[\e[33m\]\w \[\e[36m\]$(vcprompt)\[\e[0m\]]\n\$ '
   #export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u\[\e[0m\]@\[\e[32m\]\h: \[\e[33m\]\w\[\e[36m\]`__git_ps1`\[\e[0m\] ]\n$ '
 
+  alias d="ls -laFG --color=auto"
+  alias ls="ls -FG --color=auto"
+  
   alias npp="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
   #alias findes="netstat -ano | grep 9200"
   #alias killes="taskkill /F /PID "
@@ -70,6 +72,9 @@ else
   export JAVA_HOME=`/usr/libexec/java_home`
   alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
   alias usejava8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
+
+  alias d="ls -laFG"
+  alias ls="ls -FG"
 
   export FIND_CMD="gfind"
 
