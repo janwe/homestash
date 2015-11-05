@@ -39,7 +39,7 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
   export FIND_CMD="find"
 
   export VISUAL=vim
-  
+
   # If not running interactively, don't do anything
   [[ "$-" != *i* ]] && return
 
@@ -49,7 +49,8 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
 
   alias d="ls -laFG --color=auto"
   alias ls="ls -FG --color=auto"
-  
+  alias sh=bash
+
   alias npp="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
   #alias findes="netstat -ano | grep 9200"
   #alias killes="taskkill /F /PID "
@@ -71,7 +72,7 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
     fi
   }
 
-  sshagent
+  #sshagent
 else
   export JAVA_HOME=`/usr/libexec/java_home`
   alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
@@ -91,13 +92,13 @@ else
 fi
 
 export MARKPATH=$HOME/.marks
-function jump { 
+function jump {
   cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
 }
-function mark { 
+function mark {
   mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
 }
-function unmark { 
+function unmark {
   rm -i "$MARKPATH/$1"
 }
 function marks {
