@@ -88,6 +88,8 @@ else
   source /usr/local/etc/bash_completion.d/git-extras
   source /usr/local/etc/bash_completion.d/git-prompt.sh
 
+  complete -C aws_completer aws
+
   source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
 fi
 
