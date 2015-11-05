@@ -15,6 +15,7 @@ brew install bash
 brew install wget
 brew install tree
 brew install webkit2png
+brew install pv
 
 ## get dev stuff
 brew install git
