@@ -31,6 +31,12 @@ brew install sbt
 
 brew install node
 
+brew install awscli
+brew install aws-cfn-tools
+brew install aws-elasticbeanstalk
+brew install aws-mon
+brew install aws-sns-cli
+
 # do some housekeeping
 brew cleanup #IS THIS SAFE WITH VERSIONS REPO?
 brew doctor
