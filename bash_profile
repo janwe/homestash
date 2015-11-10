@@ -1,8 +1,12 @@
-if [[ "`uname`" == "CYGWIN"* ]]; then
+function keychain {
   if [ -z ${1+x} ]; then
-    keychain ~/.ssh/id_rsa
+    /usr/bin/keychain ~/.ssh/id_rsa
   else
-    keychain $1
+    /usr/bin/keychain $1
   fi
+}
+if [[ "`uname`" == "CYGWIN"* ]]; then
+  keychain
+  source ~/.keychain/*-sh
 fi
 source ~/.bashrc
