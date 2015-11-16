@@ -93,6 +93,10 @@ else
   source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
 fi
 
+if [ ! -d "~/.vim/bundle/Vundle.vim"]; then
+  git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
 export MARKPATH=$HOME/.marks
 function jump {
   cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
