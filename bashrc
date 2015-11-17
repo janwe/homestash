@@ -93,7 +93,8 @@ else
   source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
 fi
 
-if [ ! -d "~/.vim/bundle/Vundle.vim"]; then
+if [[ ! -d "${HOME}/.vim/bundle/Vundle.vim" ]]; then
+  echo "ViM plugin manager not found: cloning Vundle.vim"
   git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
