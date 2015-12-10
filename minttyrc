@@ -1,4 +1,7 @@
 BoldAsFont=no
+FontHeight=8
 Columns=170
-Rows=50
+Rows=60
 Term=xterm-256color
+Locale=nb_NO
+Charset=UTF-8
