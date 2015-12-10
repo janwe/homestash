@@ -72,6 +72,11 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
     fi
   }
 
+  # ConEmu Title
+  function cet() {
+    ConEmuC -GuiMacro Rename 0 "$1"
+  }
+
   #sshagent
 else
   export JAVA_HOME=`/usr/libexec/java_home`
