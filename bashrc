@@ -7,6 +7,9 @@ export PS1='\n[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(t
 export MAVEN_OPTS="-Xmx512m"
 export PATH=~/bin:~/homestash/bin:/usr/local/bin:$PATH
 
+GPG_TTY=$(tty)
+export GPG_TTY
+
 alias cls="clear"
 
 alias bd="boot2docker"
