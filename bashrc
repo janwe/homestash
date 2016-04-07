@@ -58,7 +58,8 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
   alias vi=vim
 
   [[ -f /etc/bash_completion ]] && . /etc/bash_completion
-  source /etc/bash_completion.d/git
+  # OLD source /etc/bash_completion.d/git
+  source /usr/share/bash-completion/completions/git
   source ~/bin/git-prompt.sh
 
   function findes() {
