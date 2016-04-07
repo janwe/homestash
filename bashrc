@@ -47,8 +47,8 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
   # OLD CYG export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u@\h: \[\e[33m\]\w \[\e[36m\]$(vcprompt)\[\e[0m\]]\n\$ '
   #export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u\[\e[0m\]@\[\e[32m\]\h: \[\e[33m\]\w\[\e[36m\]`__git_ps1`\[\e[0m\] ]\n$ '
 
-  alias d="ls -laFG --color=auto"
-  alias ls="ls -FG --color=auto"
+  alias d="ls -laF --color=auto"
+  alias ls="ls -F --color=auto"
   alias sh=bash
 
   alias npp="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
@@ -83,8 +83,8 @@ else
   alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
   alias usejava8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
 
-  alias d="ls -laFG"
-  alias ls="ls -FG"
+  alias d="ls -laF"
+  alias ls="ls -F"
 
   export FIND_CMD="gfind"
 
