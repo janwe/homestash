@@ -4,6 +4,14 @@
 # TORGEIR export PS1='\n\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 3)\][`jobs -s | wc -l | sed -e "s/ //g"`] \[$(tput setaf 4 sgr0)\]\w\[$(tput setaf 5)\]`__git_prompt` \n\[$(tput sgr0)\]$ '
 export PS1='\n[\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 5)\][`jobs -r | wc -l | sed -e "s/ //g"`] \[$(tput setaf 3 sgr0)\]\w\[$(tput setaf 6)\]`__git_ps1`\[$(tput sgr0)\] ]\n$ '
 
+function iscygwin {
+  if [[ "`uname`" == "CYGWIN"* ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
 export MAVEN_OPTS="-Xmx512m"
 export PATH=~/bin:~/homestash/bin:/usr/local/bin:$PATH
 
@@ -87,8 +95,8 @@ else
   alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
   alias usejava8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
 
-  alias d="ls -laF"
-  alias ls="ls -F"
+  alias d="ls -laFG"
+  alias ls="ls -FG"
 
   export FIND_CMD="gfind"
 
