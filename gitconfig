@@ -37,6 +37,9 @@
     keepBackup = false
     trustExitCode = false
 
+[rerere]
+    enabled = true
+
 [alias]
     br = branch
     ci = commit
