@@ -20,7 +20,7 @@ export GPG_TTY
 
 alias cls="clear"
 
-alias bd="boot2docker"
+# alias bd="boot2docker"
 
 alias whence='type -a'
 alias grep='grep --color'
@@ -92,7 +92,7 @@ if [[ "`uname`" == "CYGWIN"* ]]; then
   #sshagent
 else
   export JAVA_HOME=`/usr/libexec/java_home`
-  alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
+  # alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
   alias usejava8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
 
   alias d="ls -laFG"
@@ -102,16 +102,16 @@ else
 
   #### Git autocomplete
   source /usr/local/etc/bash_completion.d/git-completion.bash
-  source /usr/local/etc/bash_completion.d/git-extras
+  # source /usr/local/etc/bash_completion.d/git-extras
   source /usr/local/etc/bash_completion.d/git-prompt.sh
 
-  complete -C aws_completer aws
+  # complete -C aws_completer aws
 
   #source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
   source /usr/local/etc/bash_completion.d/brew
 
-  export NVM_DIR="${HOME}/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+  # export NVM_DIR="${HOME}/.nvm"
+  # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 fi
 
 if [[ ! -d "${HOME}/.vim/bundle/Vundle.vim" ]]; then

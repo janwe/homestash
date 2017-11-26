@@ -6,7 +6,7 @@
     user = janwe
 
 [core]
-    excludesfile = ~/homestash/gitignore_global
+    excludesfile = ~/homestash/dotfiles/gitignore_global
     autocrlf = input
     # norwegian chars in commits
     quotepath = false
