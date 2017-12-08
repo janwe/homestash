@@ -89,6 +89,7 @@ apps=(
     intellij-idea
 	spotify
 	openconnect-gui
+    #citrix-receiver #SVV extapp
 	#virtualbox
 	#virtualbox-extension-pack
 	#vagrant
