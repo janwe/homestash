@@ -17,7 +17,7 @@ core=(
     bash
     bash-completion@2
     openssl
-    openconnect
+    #openconnect # not needed in BEKK anymore
 )
 brew install ${core[@]}
 #PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -88,7 +88,7 @@ apps=(
     evernote
     intellij-idea
 	spotify
-	openconnect-gui
+	#openconnect-gui # not needed in BEKK anymore
     #citrix-receiver #SVV extapp
 	#virtualbox
 	#virtualbox-extension-pack
