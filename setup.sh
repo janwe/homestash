@@ -114,6 +114,10 @@ apps=(
 )
 brew cask install ${apps[@]}
 
+# diff-pdf
+#brew cask install xquartz
+#brew install diff-pdf
+
 # Link Sublime settings
 if [ -f "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings" ] ; then
     echo "Linking sublime settings from homestash.."
