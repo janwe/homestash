@@ -1,105 +1,37 @@
-// ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings
-// Settings in here override those in "Default/Preferences.sublime-settings",
-// and are overridden in turn by file type specific settings.
 {
-    "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-    "theme": "Default.sublime-theme",
-
-    // Set to false to prevent line numbers being drawn in the gutter
-    "line_numbers": true,
-
-    // The number of spaces a tab is considered equal to
-    "tab_size": 4,
-
-    // Set to true to insert spaces when tab is pressed
-    "translate_tabs_to_spaces": true,
-
-    // If translate_tabs_to_spaces is true, use_tab_stops will make tab and
-    // backspace insert/delete up to the next tabstop
-    "use_tab_stops": true,
-
-    // Set to false to disable detection of tabs vs. spaces on load
-    "detect_indentation": true,
-
-    // Calculates indentation automatically when pressing enter
-    "auto_indent": true,
-
-    // Makes auto indent a little smarter, e.g., by indenting the next line
-    // after an if statement in C. Requires auto_indent to be enabled.
-    "smart_indent": true,
-
-    // Adds whitespace up to the first open bracket when indenting. Requires
-    // auto_indent to be enabled.
-    "indent_to_bracket": false,
-
-    // Trims white space added by auto_indent when moving the caret off the
-    // line.
-    "trim_automatic_white_space": true,
-
-    // Disables horizontal scrolling if enabled.
-    // May be set to true, false, or "auto", where it will be disabled for
-    // source code, and otherwise enabled.
-    "word_wrap": "auto",
-
-    // Controls auto pairing of quotes, brackets etc
-    "auto_match_enabled": true,
-
-    // If enabled, will highlight any line with a caret
-    "highlight_line": true,
-
-    // Highlights other occurrences of the currently selected text
-    "match_selection": true,
-
-    // Set to true to removing trailing white space on save
-    "trim_trailing_white_space_on_save": true,
-
-    // Set to true to ensure the last line of the file ends in a newline
-    // character when saving
-    "ensure_newline_at_eof_on_save": false,
-
-    // Set to true to automatically save files when switching to a different file
-    // or application
-    "save_on_focus_lost": true,
-
-    // Save via writing to an alternate file, and then renaming it over the
-    // original file.
-    "atomic_save": false,
-
-    // Determines what character(s) are used to terminate each line in new files.
-    // Valid values are 'system' (whatever the OS uses), 'windows' (CRLF) and
-    // 'unix' (LF only).
-    "default_line_ending": "system",
-
-    // When enabled, pressing tab will insert the best matching completion.
-    // When disabled, tab will only trigger snippets or insert a tab.
-    // Shift+tab can be used to insert an explicit tab when tab_completion is
-    // enabled.
-    "tab_completion": true,
-
-    // Enable auto complete to be triggered automatically when typing.
-    "auto_complete": true,
-
-    // The maximum file size where auto complete will be automatically triggered.
-    "auto_complete_size_limit": 4194304,
-
-    // The delay, in ms, before the auto complete window is shown after typing
-    "auto_complete_delay": 50,
-
-    // Set to 0 to disable smooth scrolling. Set to a value between 0 and 1 to
-    // scroll slower, or set to larger than 1 to scroll faster
-    "scroll_speed": 1.0,
-
-    // Makes tabs with modified files more visible
-    "highlight_modified_tabs": true,
-
-    "show_tab_close_buttons": true,
-
-    // Show folders in the side bar in bold
-    "bold_folder_labels": true,
-
-    // Display file encoding in the status bar
-    "show_encoding": true,
-
-    // Display line endings in the status bar
-    "show_line_endings": true,
+	"atomic_save": false,
+	"auto_complete": true,
+	"auto_complete_delay": 50,
+	"auto_complete_size_limit": 4194304,
+	"auto_indent": true,
+	"auto_match_enabled": true,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"default_line_ending": "system",
+	"detect_indentation": true,
+	"ensure_newline_at_eof_on_save": false,
+	"font_size": 15,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_to_bracket": false,
+	"line_numbers": true,
+	"match_selection": true,
+	"save_on_focus_lost": true,
+	"scroll_speed": 1.0,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"show_tab_close_buttons": true,
+	"smart_indent": true,
+	"tab_completion": true,
+	"tab_size": 4,
+	"theme": "Default.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": true,
+	"use_tab_stops": true,
+	"word_wrap": "auto"
 }
