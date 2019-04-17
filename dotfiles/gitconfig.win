@@ -1,0 +1,14 @@
+[include]
+    path = ~/homestash/dotfiles/gitconfig
+
+[credential]
+    helper = "C:/Program Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
+
+[difftool "kdiff3"]
+    path = "C:/Program Files/KDiff3/kdiff3.exe"
+
+[mergetool "kdiff3"]
+    path = "C:/Program Files/KDiff3/kdiff3.exe"
+
+[winUpdater]
+	recentlySeenVersion = 2.21.0.windows.1

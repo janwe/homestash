@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 xcode-select --install
 
@@ -119,22 +119,26 @@ brew cask install ${apps[@]}
 #brew install diff-pdf
 
 # Link Sublime settings
-if [ -f "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings" ] ; then
+if [[ -f "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings" && ! -L "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings" ]]; then
     echo "Linking sublime settings from homestash.."
     mv ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings.bck
     ln -s ~/homestash/etc/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 fi
 
 # dotfiles
-# TODO check for and back up existing files
-# TODO use array and loop
+echo
 echo "Linking dotfiles from homestash.."
-ln -s ~/homestash/dotfiles/bash_profile ~/.bash_profile
-ln -s ~/homestash/dotfiles/bashrc ~/.bashrc
-ln -s ~/homestash/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/homestash/dotfiles/inputrc ~/.inputrc
-ln -s ~/homestash/dotfiles/profile ~/.profile
-ln -s ~/homestash/dotfiles/vimrc ~/.vimrc
+
+source ~/homestash/linkdotfile.sh
+
+PLAIN_DOTFILES=("bash_profile" "bashrc" "inputrc" "profile" "vimrc")
+for a_dotfile in "${PLAIN_DOTFILES[@]}"; do
+    linkdotfile "$a_dotfile"
+done
+linkdotfile gitconfig.mac gitconfig
+
 
 #Check system
+echo
+echo "Check brewery..."
 brew doctor

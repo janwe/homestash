@@ -12,9 +12,6 @@
     quotepath = false
     precomposeunicode = true
 
-[credential]
-    helper = osxkeychain
-
 [push]
     default = simple
 
@@ -34,8 +31,10 @@
     trustExitCode = false
 
 [mergetool "kdiff3"]
-    keepBackup = false
     trustExitCode = false
+
+[mergetool]
+    keepBackup = false
 
 [rerere]
     enabled = true
