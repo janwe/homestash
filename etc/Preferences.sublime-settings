@@ -23,7 +23,7 @@
 	"save_on_focus_lost": true,
 	"scroll_speed": 1.0,
 	"show_encoding": true,
-    "show_git_status": true,
+	"show_git_status": true,
 	"show_line_endings": true,
 	"show_tab_close_buttons": true,
 	"smart_indent": true,
