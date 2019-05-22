@@ -40,6 +40,7 @@ echo
 echo "Installing ruby stuff..."
 sudo apt install ruby
 sudo apt install rbenv
+sudo apt install ruby-dev
 
 echo
 echo "Installing node stuff..."
