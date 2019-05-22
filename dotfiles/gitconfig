@@ -11,6 +11,7 @@
     # norwegian chars in commits
     quotepath = false
     precomposeunicode = true
+    editor = vim
 
 [push]
     default = simple
