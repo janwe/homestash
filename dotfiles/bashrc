@@ -42,7 +42,7 @@ function addkey {
 
 if [[ "$(uname)" == "CYGWIN"* ]]; then
   echo
-  echo "Setting up environment for Cygwin..."
+  echo "[bashrc] Setting up environment for Cygwin..."
 
   export LANG=$(locale -uU)
   export FIND_CMD="find"
@@ -65,7 +65,7 @@ fi
 
 if [[ "$(uname)" == "CYGWIN"* || "$(uname)" == "Linux"* ]]; then
   echo
-  echo "Setting up environment for Cygwin/Linux/WSL..."
+  echo "[bashrc] Setting up environment for Cygwin/Linux/WSL..."
   # DEFAULT CYG export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$'
   # OLD CYG export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u@\h: \[\e[33m\]\w \[\e[36m\]$(vcprompt)\[\e[0m\]]\n\$ '
   #export PS1='\[\e]0;\w\a\]\n[\[\e[32m\]\u\[\e[0m\]@\[\e[32m\]\h: \[\e[33m\]\w\[\e[36m\]`__git_ps1`\[\e[0m\] ]\n$ '
@@ -85,7 +85,7 @@ fi
 
 if [[ "$(uname)" == "Darwin"* ]]; then
   echo
-  echo "Setting up environment for Mac..."
+  echo "[bashrc] Setting up environment for Mac..."
 
   export JAVA_HOME=`/usr/libexec/java_home`
   # alias usejava7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
