@@ -49,8 +49,9 @@ sudo apt install nodejs
 sudo apt install nodeenv
 
 echo
-echo "Installing keychain..."
+echo "Installing authentication stuff..."
 sudo apt install keychain
+sudo apt install krb5-user
 
 echo
 echo "Cleaning up..."
