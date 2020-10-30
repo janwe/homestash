@@ -77,6 +77,7 @@ snakes=(
 
 #APPS
 apps=(
+    adoptopenjdk
     alfred
     moom
 	dropbox
@@ -89,7 +90,7 @@ apps=(
     intellij-idea
 	spotify
 	#openconnect-gui # not needed in BEKK anymore
-    #citrix-receiver #SVV extapp
+    citrix-receiver #SVV extapp
 	#virtualbox
 	#virtualbox-extension-pack
 	#vagrant
