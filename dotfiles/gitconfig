@@ -13,6 +13,9 @@
     precomposeunicode = true
     editor = vim
 
+[pull]
+    rebase = true
+
 [push]
     default = simple
 
