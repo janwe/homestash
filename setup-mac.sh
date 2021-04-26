@@ -74,13 +74,13 @@ else
     echo "Skip cloning. Homestash already exists."
     echo
 fi
-if [ -d "$HOME/homestash" ]; then
+if [ -f "$HOME/homestash/mac/setup-dotfiles.sh" ]; then
     echo
     echo "Setting up dotfiles from homestash..."
     source ~/homestash/mac/setup-dotfiles.sh
 else
     echo
-    echo "No homestash found. Skipping setup of dotfiles."
+    echo "Skipping setup of dotfiles. 'setup-dotfiles.sh' not found - is repo cloned and on correct branch?"
     echo
 fi
 
