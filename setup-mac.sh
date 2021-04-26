@@ -68,14 +68,21 @@ fi
 if [ ! -d "~/homestash" ]; then
     echo
     echo "Cloning homestash..."
-    git clone git@github.com:janwe/homestash.git ~/homestash
+    git clone git@janwe.github.com:janwe/homestash.git ~/homestash
 else
     echo
     echo "Skip cloning. Homestash already exists."
     echo
 fi
-
-source ~/homestash/mac/setup-dotfiles.sh
+if [ -d "~/homestash" ]; then
+    echo
+    echo "Setting up dotfiles from homestash..."
+    source ~/homestash/mac/setup-dotfiles.sh
+else
+    echo
+    echo "No homestash found. Skipping setup of dotfiles."
+    echo
+fi
 
 echo
 echo "Done with setup. Remember to update .ssh/config"
