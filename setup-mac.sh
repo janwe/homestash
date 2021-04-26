@@ -14,7 +14,7 @@ brew update
 echo
 echo "Installing core stuff.."
 core=(
-	coreutils
+    coreutils
     findutils
     libsodium
 )
