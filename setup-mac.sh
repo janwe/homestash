@@ -5,8 +5,8 @@ xcode-select --install
 # Check for Homebrew
 if test ! $(which brew); then
   echo "Installing homebrew.."
-  brew analytics off
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew analytics off
 fi
 
 brew update
@@ -57,7 +57,7 @@ echo "Check brewery..."
 brew doctor
 
 github-keygen janwe
-if [ ! -d "~/homestash"]
+if [ ! -d "~/homestash"]; then
     git clone git@github.com:janwe/homestash.git ~/homestash
 fi
 
