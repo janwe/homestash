@@ -56,9 +56,23 @@ echo
 echo "Check brewery..."
 brew doctor
 
-github-keygen janwe
-if [ ! -d "~/homestash"]; then
+if [ ! -f "~/.ssh/id_janwe@github" ]; then
+    echo
+    echo "Generating new SSH key for Github..."
+    github-keygen janwe
+else
+    echo
+    echo "Skipping keygen. Github key already exists."
+    echo
+fi
+if [ ! -d "~/homestash" ]; then
+    echo
+    echo "Cloning homestash..."
     git clone git@github.com:janwe/homestash.git ~/homestash
+else
+    echo
+    echo "Skip cloning. Homestash already exists."
+    echo
 fi
 
 source ~/homestash/mac/setup-dotfiles.sh
