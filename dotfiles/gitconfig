@@ -1,21 +1,20 @@
 [user]
-    name = Jan Fredrik Wedén
-    email = jfweden@gmail.com
+	name = Jan Fredrik Wedén
+	email = jfweden@gmail.com
 
 [github]
     user = janwe
 
 [core]
-    excludesfile = ~/homestash/gitignore_global
+    excludesfile = ~/homestash/dotfiles/gitignore_global
     autocrlf = input
-    # autocrlf = true
     # norwegian chars in commits
     quotepath = false
     precomposeunicode = true
+    editor = vim
 
-[credential]
-    # helper = cache --timeout=86400
-    # helper = !\"C:\\Program Files (x86)\\GitExtensions\\GitCredentialWinStore\\git-credential-winstore.exe\"
+[pull]
+    rebase = true
 
 [push]
     default = simple
@@ -33,13 +32,16 @@
     tool = kdiff3
 
 [difftool "kdiff3"]
-    path = C:/Program Files/KDiff3/kdiff3.exe
     trustExitCode = false
 
 [mergetool "kdiff3"]
-    path = C:/Program Files/KDiff3/kdiff3.exe
-    keepBackup = false
     trustExitCode = false
+
+[mergetool]
+    keepBackup = false
+
+[rerere]
+    enabled = true
 
 [alias]
     br = branch
@@ -50,6 +52,7 @@
     cl = config -l
     sl = stash list
     fp = fetch -p
+    fpp = !git fetch -p && git pull
     pom = pull origin master
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 #    log = log --graph --decorate=full --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

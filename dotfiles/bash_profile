@@ -1,0 +1,21 @@
+source ~/.bashrc
+
+function keychain {
+  if [[ -z ${1+x} ]]; then
+    /usr/bin/keychain --agents ssh ~/.ssh/id_rsa
+  else
+    /usr/bin/keychain --agents ssh $1
+  fi
+}
+
+if [[ "$(uname)" == "CYGWIN"* ]]; then
+  echo
+  echo "Starting keychain and sourcing scripts on Cygwin"
+  keychain
+  source ~/.keychain/*-sh
+elif [[ "$(uname)" == "Linux"* ]]; then
+  echo
+  echo "Starting keychain and sourcing scripts on Linux/WSL"
+  keychain
+  source ~/.keychain/*-sh
+fi
