@@ -22,10 +22,18 @@ brew doctor
 
 # Link Sublime settings
 echo
-if [[ -f "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings" && ! -L "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings" ]]; then
-    echo "Linking Sublime settings from homestash.."
-    mv ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings.bck
-    ln -s ~/homestash/etc/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+echo "Linking Sublime settings from homestash..."
+SETTINGS_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+mkdir -p -v "$SETTINGS_DIR"
+if [[ -f "$SETTINGS_DIR/Preferences.sublime-settings" && ! -L "$SETTINGS_DIR/Preferences.sublime-settings" ]]; then
+    echo "Backing up existing Sublime settings file.."
+    echo "Running: mv $SETTINGS_DIR/Preferences.sublime-settings $SETTINGS_DIR/Preferences.sublime-settings.bck"
+    mv "$SETTINGS_DIR/Preferences.sublime-settings" "$SETTINGS_DIR/Preferences.sublime-settings.bck"
+fi
+if [[ ! -L "$SETTINGS_DIR/Preferences.sublime-settings" ]]; then
+    echo "Creating link.."
+    echo "Running: ln -s ~/homestash/etc/Preferences.sublime-settings $SETTINGS_DIR/Preferences.sublime-settings"
+    ln -s ~/homestash/etc/Preferences.sublime-settings "$SETTINGS_DIR/Preferences.sublime-settings"
 else
-    echo "Sublime settings already linked"
+    echo "Skip linking - Sublime settings already linked"
 fi
