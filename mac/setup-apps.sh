@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
 #Brukte apps:
-#Sonos S2 (fant bare S1)
 #Trello (app store?)
+#Tweetdeck (app store?)
+#Sonos S2 (fant bare S1)
 #Logi Options (finnes ikke)
 #Synology Assistant (finnes ikke)
 #Pexip (my meeting video)
 #SuuntoLink (finner bare gamle moveslink2)
-#Tweetdeck
+#Citrix Workspace
+#microsoft-office #håndtert på annen måte
 
 echo
 echo "Installing apps..."
@@ -15,7 +17,7 @@ apps=(
     alfred
     moom
     witch
-    dropbox
+    #dropbox #opplevde sync issues og installerte manuelt i stedet
     iterm2
     firefox
     google-chrome
@@ -28,11 +30,12 @@ apps=(
     zoom
     discord
     pocket-casts
-    #"--cask docker"
-    #microsoft-office
+    karabiner-elements
+    cloudapp
     #gimp
     #keepassx # Datainn
     lastpass
+    miro
 )
 for a_brew in ${apps[@]}; do
     brew install $a_brew
@@ -53,7 +56,6 @@ echo "Check brewery..."
 brew doctor
 
 #Old apps
-    #Citrix Workspace/Receiver
     #soundflower (pass audio to other apps)
     #audacity
     #xquartz

@@ -41,6 +41,7 @@ gitstuff=(
     git
     bash-git-prompt
     zsh-git-prompt
+    tig
     github-keygen
     kdiff3
 )
