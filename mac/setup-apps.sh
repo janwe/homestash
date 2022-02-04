@@ -33,7 +33,7 @@ apps=(
     karabiner-elements
     cloudapp
     #gimp
-    #keepassx # Datainn
+    keepassxc # Datainn
     lastpass
     miro
 )
