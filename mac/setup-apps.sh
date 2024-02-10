@@ -36,6 +36,10 @@ apps=(
     keepassxc # Datainn
     lastpass
     miro
+    notion
+    todoist
+    #anydo Nah, ikke den beste
+    time-out
 )
 for a_brew in ${apps[@]}; do
     brew install $a_brew
